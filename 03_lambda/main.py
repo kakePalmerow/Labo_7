@@ -19,11 +19,17 @@ Al terminar: git commit -m "Resuelve ejercicio 03".
 
 def calcular_importes(precios):
     # TODO: implementa lo solicitado y devuelve el resultado.
-    pass
+    importes = []
 
+    for p in range(len(precios)):
+        recargo = lambda precio: round(precio * 1.1, 2)
+        importes.append(recargo(precios[p]))
+    return importes
 
 # Ejemplo de uso: inicialmente imprime None porque falta la implementación.
 precios = [10, 20, 35]
 print(calcular_importes(precios))
 
 # TODO: añade otro ejemplo con print y su resultado esperado en un comentario.
+precios2 = [45, 30, 7]
+print(calcular_importes(precios2)) # [49.5, 33.0, 7.7]
